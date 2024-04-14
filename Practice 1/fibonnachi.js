@@ -22,3 +22,32 @@ function fib(length) {
 }
 
 console.log(fib(4));
+
+
+//Second way to resolve problem
+
+function fib(length) {
+    
+    if (typeof(length) !== 'number' || length <= 0 || !Number.isInteger(length)) {
+        return "";
+    }
+    
+   let first=0;
+   let second=1;
+   let result="";
+    for(let i=0;i<length;i++){
+        if(i+1===length){
+            result+=`${first}`;
+        }else{
+            result+=`${first} `;
+        }
+        
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+    
+      return result;
+
+    
+}
